@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Election Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Candidate</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+            <!-- Dynamic results will be inserted here -->
+        </tbody>
+    </table>
+    <script>
+        // Predefined list of candidates and votes
+        const candidates = [
+            { candidate_name: "Shruti Wadhekar", vote_count: 20 },
+            { candidate_name: "Sakshi Khode", vote_count: 22 },
+            { candidate_name: "Yamini Babhulkar", vote_count: 23 },
+            { candidate_name: "Mehwish Sheikh", vote_count: 24 }
+        ];
+
+        // Display the candidates in the table
+        const resultsTable = document.getElementById('results');
+        candidates.forEach(result => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${result.candidate_name}</td>
+                <td>${result.vote_count}</td>
+            `;
+            resultsTable.appendChild(row);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQ - Online Voting System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .faq-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 28px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .faq-item h3 {
+            font-size: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .help-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-section h2 {
+            font-size: 28px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        .help-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .faq-item h3 {
+                font-size: 18px;
+            }
+
+            .faq-item p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Help & FAQ</h1>
+        <select class="language-select" id="language-select">
+            <option value="en">English</option>
+            <option value="mr">Marathi</option>
+            <option value="hi">Hindi</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <!-- Help Section -->
+        <div class="help-section">
+            <h2>Need Help?</h2>
+            <p>
+                If you are experiencing any issues or have any questions regarding the online voting process, you’ve come to the right place! Below you will find answers to common questions as well as contact information if you need further assistance. We are here to ensure your voting experience is smooth and secure.
+            </p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>1. How do I register for voting?</h3>
+                <p>
+                    To register for voting, click on the "Register" button on the homepage. Fill in your personal details, such as name, email address, and a password. Once submitted, you will receive a confirmation email. Follow the instructions in the email to complete your registration.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>2. How do I cast my vote?</h3>
+                <p>
+                    Once logged in, navigate to the "Vote" page. Select the candidate or option you want to vote for, and then click the "Submit Vote" button. Your vote will be securely processed and you will receive a confirmation message once your vote is successfully submitted.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>3. Can I change my vote after submission?</h3>
+                <p>
+                    Unfortunately, once your vote has been submitted, it cannot be changed. Please ensure your choice is correct before submitting your vote.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>4. Is my vote anonymous?</h3>
+                <p>
+                    Yes, your vote is completely anonymous. We use encryption to ensure that your vote cannot be traced back to you.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>5. How do I know my vote was counted?</h3>
+                <p>
+                    After you submit your vote, you will receive a confirmation message. You can also check the "Vote History" section of your account to ensure that your vote was successfully recorded.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>6. What should I do if I forget my password?</h3>
+                <p>
+                    If you forget your password, click the "Forgot Password" link on the login page. Enter your email address and follow the instructions to reset your password.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>7. Who can I contact for further help?</h3>
+                <p>
+                    If you need further assistance, please contact our support team via email at support@onlinevoting.com, or call us at 1-800-VOTE-NOW. We are available 24/7 to assist you.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Online Voting System &copy; 2024. All Rights Reserved.</p>
+    </footer>
+    <script src="language.js"></script>
+</body>
+</html>

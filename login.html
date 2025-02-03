@@ -1,0 +1,217 @@
+<?php include('server.php')?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e8fa4b18bd.js" crossorigin="anonymous"></script>
+    <title>Responsive Online Voting System</title>
+    <style>
+    *{
+        margin: 0;
+        padding:0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing:border-box;
+        border-radius: 0cap;
+     }
+ .form-box{
+    box-sizing:border-box;
+    border-radius: 3cap;
+    width:100%;
+    max-width: 450px;
+    position: absolute;
+    top:-25%;
+    left:50%;
+    transform:translate(-50%,50%);
+    background: #fff;
+    padding:50px 60px 60px;
+    text-align: center;
+ }
+ .form-box h1{
+    font-size:30px;
+    margin-bottom:60px;
+    color:#3c00a0;
+    position: relative;
+
+ }
+ .form-box h1::after{
+    content:'';
+    width:30px;
+    height:4px;
+    border-radius:3px;
+    background: #3c00a0;
+    position:absolute;
+    bottom: -12px;
+    left:50%;
+    transform:translateX(-50%);
+ }
+ .input-field{
+background:#eaeaea;
+margin:15px 0;
+border-radius:3px;
+display:flex;
+align-items:center;
+max-height: 65px;
+transition: max-height 0.5s;
+overflow: hidden;
+ }
+ input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+ }
+ .input-field i{
+margin-left:15px;
+color:#3f3f3f;
+ }
+ form p{
+    text-align:left;
+    font-size:13px ;
+ }
+ form p a{
+    text-decoration: none;
+    color: #3c00a0;
+    
+ }
+ .btn-field{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+ }
+ 
+ .btn-field button{
+    flex-basis: 48%;
+    background: #3c00a0;
+    color:#fff;
+    height: 40px;
+    border-radius: 20px;
+    border:0;
+    outline:0;
+    cursor:pointer;
+    transition:background 1s;
+ }
+ .input-group{
+    height:280px;
+ }
+
+ .btn-field button.disable{
+    background:  #e7e7e7;
+    color:#3c00a0;
+ }
+ .login-button{
+    display:block;
+  width:160px;
+  height:50px;
+  background: #108b52;
+  text-align:center;
+  font-size:22px;
+  line-height:50px;
+  cursor:pointer;
+  box-shadow: -3px -3px 7px #fffdfdcc, 3px 3px 5px rgba(94, 104, 121, 0.342);
+  display:none;
+ }
+ /* popup styles */
+ .popup.active{
+    display:block;
+ }
+ .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+        .popup-overlay.active {
+            display: block;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background:#4d30ce ;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+    </style>
+    
+</head> 
+<body>
+
+    <div class="popup" id="popup">
+        <div class="form-box">
+            <h1 id="title">Sign up</h1>
+            <form action="login.php">
+                <?php include('server.php')?>
+                <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email"placeholder="Email">
+                    </div>  
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <p>Lost Password <a href="#">Click here!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign up </button>
+                    <button type="button" id ="signinBtn" class="disable">Sign in</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script>
+        let signupBtn = document.getElementById("signupBtn");
+        let signinBtn = document.getElementById("signinBtn");
+        let namefield= document.getElementById("namefield");
+        let title = document.getElementById("title");
+       
+       
+        signinBtn.onclick=function(){
+            namefield.style.maxHeight="0";
+            title.innerHTML="Sign In";
+            signupBtn.classList.add("disable");
+            signinBtn.classList.remove("disable");
+            togglePopup();
+        }
+        signupBtn.onclick=function(){
+            namefield.style.maxHeight="60px";
+            title.innerHTML="Sign up";
+            signupBtn.classList.remove("disable");
+            signinBtn.classList.add("disable");
+        }
+        function openLoginPopup() {
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("popup-overlay");
+    popup.classList.add("active");
+    overlay.classList.add("active");
+}
+
+function closeLoginPopup() {
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("popup-overlay");
+    popup.classList.remove("active");
+    overlay.classList.remove("active");
+}
+    </script>
+    
+
+
+    
+</body>
+</html> 

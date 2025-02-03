@@ -1,0 +1,252 @@
+
+<?php include('server.php')?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Online Voting System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background: #ffffff;
+            color: #333;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            
+
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #22a589;
+            font-size: 10%;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        input[type="password"]:focus, 
+        input[type="number"]:focus {
+            border-color: #1abc9c;
+            outline:auto;
+        }
+
+        .checkbox-section {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-section input {
+            margin-right: 10px;
+        }
+
+        .camera-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 320px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .camera-controls button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .camera-controls button:hover {
+            background-color: #16a085;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #1abc9c;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #16a085;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .message a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .message a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            input[type="submit"] {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Your Account</h2>
+        <form id="registrationForm">
+            <?php include('errors.php')?>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+
+            <label for="voterID">Voter ID</label>
+            <input type="number" id="voterID" name="voterID" placeholder="Enter your voter ID" required>
+
+            <label for="aadhaar">Aadhaar Number</label>
+            <input type="number" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar number" required>
+
+            <!-- Face Verification Section -->
+            <div class="camera-section">
+                <h3>Face Verification</h3>
+                <video id="video" autoplay></video>
+                <div class="camera-controls">
+                    <button type="button" id="capturePhoto">Capture Photo</button>
+                </div>
+            </div>
+
+            <!-- Checkbox Section -->
+            <div class="checkbox-section">
+                <input type="checkbox" id="confirmInfo" required>
+                <label for="confirmInfo">I confirm that the information above is correct.</label>
+            </div>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <div class="message">
+            <p>Already registered? <a href="#login">Log in here</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const video = document.getElementById('video');
+        const captureButton = document.getElementById('capturePhoto');
+
+        // Start video stream for face verification
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error accessing camera:', error);
+            });
+
+        // Capture photo for face verification
+        captureButton.addEventListener('click', function () {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            alert('Photo captured for face verification!');
+            // You can now send `dataUrl` to a backend service for processing
+        });
+
+        // Form submission
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const voterID = document.getElementById('voterID').value;
+            const aadhaar = document.getElementById('aadhaar').value;
+
+            // Validate Passwords
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            // Validate Aadhaar
+            if (aadhaar.length !== 12) {
+                alert('Invalid Aadhaar number.');
+                return;
+            }
+
+            alert(`Registration Successful!\nName: ${name}\nEmail: ${email}\nVoter ID: ${voterID}\nAadhaar: ${aadhaar}`);
+            window.location.href = "voting.html"; // Redirect to the voting page
+        });
+    </script>
+</body>
+</html>

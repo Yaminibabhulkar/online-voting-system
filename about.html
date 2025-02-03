@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Online Voting System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .about-section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #1abc9c;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .features-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .feature {
+            flex-basis: 45%;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .team-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-section h2 {
+            font-size: 30px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+            flex-basis: 30%;
+            position:"absolute";
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #1abc9c;
+        }
+
+        .team-member h4 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .features-list .feature, 
+            .team-members .team-member {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>About Our Voting System</h1>
+        <select class="language-select" id="language-select">
+            <option value="en">English</option>
+            <option value="mr">Marathi</option>
+            <option value="hi">Hindi</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>
+                Welcome to the Online Voting System, where your voice matters! We are dedicated to making the voting process secure, reliable, and accessible to everyone. Our platform is designed to make elections easier, faster, and more transparent. We strive to provide a seamless voting experience for both organizers and voters, ensuring the integrity of each vote cast.
+            </p>
+        </div>
+
+        <!-- Features Section -->
+        <div class="about-section">
+            <h2>Why Choose Us?</h2>
+            <div class="features-list">
+                <div class="feature">
+                    <h3>Security</h3>
+                    <p>
+                        Our system uses top-level encryption and security measures to ensure that every vote is protected. We prioritize data privacy and election integrity.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>User Friendly</h3>
+                    <p>
+                        Designed with simplicity in mind, our platform is easy to navigate for all types of users, ensuring that everyone can cast their vote with ease.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Real-Time Results</h3>
+                    <p>
+                        Our system provides real-time voting results, allowing election organizers to see results as they come in and ensuring complete transparency.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Global Access</h3>
+                    <p>
+                        Our platform supports remote voting from anywhere in the world, allowing participants to vote regardless of their location.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2 style="margin-bottom: 70px;">Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member" style="margin-left: 70px;">
+                    <img src="shruuuu.jpg" alt="Team Member 1">
+                    <h4>Shruti Wadhekar</h4>
+                    <p>Exclusive Team Member 1</p>
+                </div>
+                <div class="team-member">
+                    <img src="saku.jpg" alt="Team Member 2">
+                    <h4>Sakshi khode</h4>
+                    <p> Exclusive Team Member 2</p>
+                </div>
+                <div class="team-member" style="margin-top: 50px;margin-left: 70px;">
+                    <img src="Yamini.jpg" alt="Team Member 3">
+                    <h4>Yamini babhulkar</h4>
+                    <p>Exclusive Team Member 3</p>
+                </div>
+                <div class="team-member" style="margin-top: 50px;">
+                    <img src="sheikh.jpg" alt="Team Member 3">
+                    <h4>Mehwish sheikh</h4>
+                    <p>Exclusive Team Memeber 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Online Voting System &copy; 2024. All Rights Reserved.</p>
+    </footer>
+    <script src="language.js"></script>
+
+</body>
+</html>

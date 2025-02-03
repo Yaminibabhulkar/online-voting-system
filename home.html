@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e8fa4b18bd.js" crossorigin="anonymous"></script>
+    <title>Responsive Online Voting System</title>
+    <style>
+        body {
+            margin:auto;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #1cbe9e;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin:auto;
+        }
+        nav {
+            display: flex;
+            justify-content:center;
+            background-color: #2c3e50;
+        }
+        .btn-open-popup {
+            padding: 10px 20px;
+            font-size: 15px;
+            background-color: rgb(243, 134, 9);
+            color: #fff;
+            border: none;
+            border-radius: 8%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #1abc9c;
+        }
+        .container {
+            background-image: url("image2.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .container h2 {
+          font-family :system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          font-size: xx-large;
+          color: #34495e;
+           margin-bottom: 60px;
+          margin-top: 200px; /* Increase this value */
+        }
+        .container p {
+            font-size: larger;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #555;
+            margin-bottom: 100px;
+            margin-top: 60px;
+            max-width: 600px;
+        }
+        .btn {
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 50px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #16a085;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            .container {
+                padding: 20px;
+            }
+            .btn {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 16px;
+            }
+        }
+
+        .language-select {
+            margin: 20px;
+        } 
+   
+
+    </style>
+    
+</head> 
+<body>
+    <header>
+        <h1 id="main-title">Online Voting System</h1>
+        <p id="main-subtitle">Your vote matters. Secure, simple, and fair.</p>
+    </header>
+
+    <nav>
+        <a href="#" id="nav-home">Home</a>
+        <a href="help.html" id="nav-help">Help</a>
+        <a href="about.html" id="nav-about">About Us</a>
+        <a href="contact.html" id="nav-contact">Contact</a>
+        <a href="login.html" id="nav-login">Log In </a>
+    </nav>
+
+    <div class="container">
+        <h2 id="upcoming-election">Upcoming Election: 2024 National Elections</h2>
+        <p id="participate-msg">
+            Participate in the upcoming elections and have your voice heard!
+            Register today and get ready to cast your vote for the candidates that represent your vision for the future.
+        </p>
+        <a href="Registeration.html" class="btn" id="btn-register">Registration</a>
+    </div>
+    // popup login
+    
+    <footer>
+        <p id="footer-msg">Online Voting System &copy; 2024 - All Rights Reserved</p>
+    </footer>
+
+
+    
+</body>
+</html>
